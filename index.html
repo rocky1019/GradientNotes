@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gradient Notes</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script defer src="script.js"></script>
+  <!-- Pickr CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css"/>
+
+<!-- Pickr JS -->
+<script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr"></script>
+
+</head>
+<body>
+  <header>
+    <h1>🌈 <span class="logo-text">Gradient Notes</span></h1>
+    <button id="toggleTheme" class="theme-toggle">
+      <i class="fas fa-moon"></i>
+    </button>
+  </header>
+  
+  <main>
+    <section class="new-note glassy-container">
+      <textarea id="noteInput" placeholder="Write your note here..."></textarea>
+      <div class="controls">
+        <div id="colorPicker"></div>
+        <button id="addNote">Add Note</button>
+      </div>
+      <input type="text" id="searchInput" placeholder="Search notes..."/>
+    </section>
+    
+    <section id="notesContainer"></section>
+  </main>
+
+  <!-- Font Awesome for icons -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</body>
+</html>
