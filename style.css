@@ -1,0 +1,224 @@
+/* Reset & Font */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Body */
+body {
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #c6fff6);
+  background-size: 400% 400%;
+  animation: gradientBG 20s ease infinite;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Gradient Animation */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Header */
+header {
+  max-width: 900px;
+  margin: 0 auto 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ 
+}
+header h1 {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.4); /* Semi-transparent dark backdrop */
+  padding: 0.3em 0.6em;
+  border-radius: 8px;
+  color: #fff; /* Bright text */
+}
+
+.logo-text {
+  background: linear-gradient(90deg, #ff9a9e, #fad0c4, #fbc2eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 5px rgba(255,255,255,0.7);
+}
+.theme-toggle {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.2em;
+  transition: all 0.3s ease;
+}
+.theme-toggle:hover {
+  background: rgba(255,255,255,0.4);
+}
+
+/* Glassy New Note Container */
+.glassy-container {
+  max-width: 900px;
+  margin: 0 auto 20px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 16px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+}
+
+/* Textarea */
+.new-note textarea {
+  width: 100%;
+  height: 80px;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  resize: none;
+  font-size: 1em;
+  color: #333;
+}
+
+/* Controls */
+.new-note .controls {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+.new-note button {
+  padding: 10px 20px;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.new-note button:hover {
+  background: #555;
+}
+.new-note input[type="color"] {
+  width: 40px;
+  height: 40px;
+  border: none;
+  padding: 0;
+}
+
+/* Search */
+#searchInput {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1em;
+}
+
+/* Notes Container */
+#notesContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Note Cards */
+.note {
+  background: linear-gradient(135deg, rgba(186,158,255,0.2), rgba(247,168,248,0.2));
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #fff;
+  position: relative;
+  word-break: break-word;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.note:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(186,158,255,0.4);
+}
+.note button.delete {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.3);
+  border: none;
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
+.note button.delete:hover {
+  background: rgba(0,0,0,0.5);
+}
+
+/* Smooth Transitions */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff9a9e, #fbc2eb);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.1);
+}
+body.dark {
+  background: #111;
+  color: #eee;
+}
+
+body.dark .glassy-container {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+body.dark .note {
+  border: 1px solid #444;
+}
+/* Hide the default color input appearance */
+#colorPicker {
+  -webkit-appearance: none;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 0;
+  background: none;
+  box-shadow: 0 0 0 2px #ccc;
+  transition: box-shadow 0.2s ease;
+}
+
+#colorPicker:hover {
+  box-shadow: 0 0 0 2px #999;
+}
+
+#colorPicker::-webkit-color-swatch-wrapper {
+  padding: 0;
+  border: none;
+}
+
+#colorPicker::-webkit-color-swatch {
+  border: none;
+  border-radius: 8px;
+}
+#colorPicker {
+  margin-right: 10px;
+}
